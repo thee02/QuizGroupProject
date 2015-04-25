@@ -68,8 +68,10 @@
 			}
 
 
-			echo "Name:". $name ."<br />"."<br />";
-			echo "Total Score: $totalScores points.";
+			echo '<h2> Quiz Results </h2>';
+			echo '<p> Your quiz has been submitted. Thank you for participating. Your quiz result is listed below. </p>';
+			echo "<p> Name: ". $name ." </p>";
+			echo "<p> Total Score: $totalScores/5 points.</p>";
 
 		?>
 	</body>

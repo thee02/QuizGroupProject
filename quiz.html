@@ -3,85 +3,67 @@
 	<head>
 		<meta charset = "utf-8" />
 		<title> Quiz </title>
-		<script src="timer.js" type="text/javascript"></script>
+		<script src="quiz_setup.js" type="text/javascript"></script>
 		<link rel="stylesheet" type="text/css" href="main.css" />
 	</head>
 	<body>
 		<h1> Bird Facts Quiz </h1>
 
-		<input type="button" value="10:00:00" name="timer" id="timer" style="width:60px"/>
- <br />
 
-		<button onclick="clock()" name="start" id="start">Start</button>
- <br /><br />
-
-
+		<!-- for testing HTML only, remove quiz_report.php -->
 		<form method="post" action="quiz_report.php" name="myForm">
-			User's Name:
-			<input type="text" name="name"> <br/><br/>
+			<label> Please enter your name: <br />
+			<input type="text" name="name" id="name" size="30" /> </label> <br/>
+		
+			<p> When you are ready to start the quiz, click the Start Quiz button. You will have 10 minutes to complete the quiz. </p>
 
-			Question 1:<br /><br />
-			What is the largest bird in the world? <br />
-			<input type="radio" name="Q1" value="A" />Ostrich<br />
+			<button name="start" id="start"> Start Quiz </button>
+			<p id="time"> Time Remaining: 10:00 </p>
 
-			<input type="radio" name="Q1" value="B"/>Yellow Warbler<br />
+			<h3> Question 1: </h3>
+			<p> What is the largest bird in the world? </p>
+			<label> <input type="radio" name="Q1" value="A" /> Ostrich </label> <br />
+			<label> <input type="radio" name="Q1" value="B" /> Yellow Warbler </label> <br />
+			<label> <input type="radio" name="Q1" value="C" /> Penguin </label> <br />
+			<label> <input type="radio" name="Q1" value="D" /> Red Robin </label> <br />
 
-			<input type="radio" name="Q1" value="C"/>Penguin<br />
+			<h3> Question 2: </h3>
+			<p> What is the only bird that can fly backwards? </p>
+			<label> <input type="radio" name="Q2" value="A" /> Northern Cardinal </label> <br />
+			<label> <input type="radio" name="Q2" value="B" /> Red-tailed Hawk </label> <br />
+			<label> <input type="radio" name="Q2" value="C" /> Hummingbird </label> <br />
+			<label> <input type="radio" name="Q2" value="D" /> Blue Jay </label> <br />
 
-			<input type="radio" name="Q1" value="D"/>Red Robin<br />
+			<h3> Question 3: </h3>
+			<p> What is the smallest bird in the world? </p>
+			<label> <input type="radio" name="Q3" value="A" /> Bee Hummingbird </label> <br />
+			<label> <input type="radio" name="Q3" value="B" /> Black-capped Chickadee </label> <br />
+			<label> <input type="radio" name="Q3" value="C" /> Western Scrub-Jay </label> <br />
+			<label> <input type="radio" name="Q3" value="D" /> Baltimore Oriole </label> <br />
 
-			<br />
-
-			Question 2:<br /><br />
-			What is the only bird that can fly backwards? <br />
-			<input type="radio" name="Q2" value="A" />Northern Cardinal<br />
-
-			<input type="radio" name="Q2" value="B"/>Red-tailed Hawk<br />
-
-			<input type="radio" name="Q2" value="C"/>Hummingbird<br />
-
-			<input type="radio" name="Q2" value="D"/>Blue Jay<br />
-
-			<br />
-
-			Question 3:<br /><br />
-			What is the smallest bird in the world? <br />
-			<input type="radio" name="Q3" value="A" />Bee Hummingbird<br />
-
-			<input type="radio" name="Q3" value="B"/>Black-capped Chickadee<br />
-
-			<input type="radio" name="Q3" value="C"/>Western Scrub-Jay<br />
-
-			<input type="radio" name="Q3" value="D"/>Baltimore Oriole<br />
-
-			<br />
-
-			Question 4:<br /><br />
-			What is the only bird that can swim and not fly? <br />
-			<input type="radio" name="Q4" value="A" />Osprey<br />
-
-			<input type="radio" name="Q4" value="B"/>Penguin<br />
-
-			<input type="radio" name="Q4" value="C"/>Northern Mockingbird<br />
-
-			<input type="radio" name="Q4" value="D"/>Cedar Waxwing<br />
-
-			<br />
+			<h3> Question 4: </h3>
+			<p> What is the only bird that can swim and not fly? </p>
+			<label> <input type="radio" name="Q4" value="A" /> Osprey </label> <br />
+			<label> <input type="radio" name="Q4" value="B" /> Penguin </label> <br />
+			<label> <input type="radio" name="Q4" value="C" /> Northern Mockingbird </label> <br />
+			<label> <input type="radio" name="Q4" value="D" /> Cedar Waxwing </label> <br />
  
-			Question 5:<br /><br />
-			What is the only bird that can turn their head almost 360 degrees?<br />
-			<input type="radio" name="Q5" value="A" />Parakeets<br />
+			<h3> Question 5: </h3>
+			<p> What is the only bird that can turn their head almost 360 degrees? </p>
+			<label> <input type="radio" name="Q5" value="A" /> Parakeets </label> <br />
+			<label> <input type="radio" name="Q5" value="B" /> Dove </label> <br />
+			<label> <input type="radio" name="Q5" value="C" /> Chicken </label> <br />
+			<label> <input type="radio" name="Q5" value="D" /> Owl </label> <br />
+			
+			<br />
 
-			<input type="radio" name="Q5" value="B"/>Dove<br />
-
-			<input type="radio" name="Q5" value="C"/>Chicken<br />
-
-			<input type="radio" name="Q5" value="D"/>Owl<br /><br />
-
-
-			<input type = "submit"  name = "submit" value="Submit Your Quiz" />
+			<input type="submit" name="submit" id="submit" value="Submit Quiz" />
+			
 			<br /><br /><br />
 		</form>
+		
+		<!-- Register event handlers and disable quiz on load --!>
+		<script src="quiz_register.js" type="text/javascript"></script>
   	</body>
 </html>
 
