@@ -15,8 +15,9 @@
 
 			$totalScores = 0;
 
-
-			if (empty($_POST["name"])) {
+			/* Thee - just little change from double quote to single quote on $_POST['name']
+			*/
+			if (empty($_POST['name'])) {
 	
 				die ("Name is required. Please go back");
 			  } else {
